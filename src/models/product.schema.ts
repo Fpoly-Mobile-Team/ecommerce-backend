@@ -6,7 +6,14 @@ export const ProductSchema = new mongoose.Schema({
     ref: 'User',
   },
   title: String,
-  image: String,
+  image: {
+    type: String,
+    default: 'n/a',
+  },
+  imageGallery: [String],
+  categoryMain: { type: String, default: 'uncategorized' },
+  categorySub: [String],
+  tag: [String],
   description: String,
   price: Number,
   created: {
